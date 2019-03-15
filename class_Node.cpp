@@ -47,7 +47,7 @@ void Node::PG ()
 //-------------------------------------------//
 void Node::Add_Node ()
 {
-    printf ("# À ÷òî ýòî?\n");
+    printf ("# А что это?\n");
     std::string answerN;
     std::getline (std::cin, answerN);
     Node* new_YES = new Node (answerN);
@@ -60,7 +60,7 @@ void Node::Add_Node ()
     NO = new_NO;
     new_NO->Parent = this;
 
-    printf ("# ×åì %s îòëè÷àåòñÿ îò %s?\n", answerN.c_str(), answerY.c_str());
+    printf ("# Чем %s отличается от %s?\n", answerN.c_str(), answerY.c_str());
     std::string question;
     std::getline (std::cin, question);
     text = question;
