@@ -18,19 +18,19 @@ Node::~Node ()
 //-------------------------------------------//
 void Node::PG ()
 {
-	printf ("# Это %s?\n# Ответ: ", text.c_str());
+	printf ("# Р­С‚Рѕ %s?\n# РћС‚РІРµС‚: ", text.c_str());
 	std::string ans;
-	while ((ans != "д") && (ans != "н"))
+	while ((ans != "Рґ") && (ans != "РЅ"))
 	{
         fflush(stdin);
 		std::getline (std::cin, ans);
 
-		if (ans == "д")
+		if (ans == "Рґ")
 		{
 			if (YES != NULL) {	YES->PG();}
-			else {	printf ("# Ура, угадал!\n\n"); return;};
+			else {	printf ("# РЈСЂР°, СѓРіР°РґР°Р»!\n\n"); return;};
 		}
-		else if (ans == "н")
+		else if (ans == "РЅ")
 		{
 			if (NO != NULL) {	NO->PG();}
 			else
@@ -40,18 +40,14 @@ void Node::PG ()
     	        return;
     	    };
 		}
-		else {	printf ("# Введите корректный ответ: ");}
+		else {	printf ("# Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ РѕС‚РІРµС‚: ");}
 	};
-//	else if (ans == "D")
-//	{
-//
-//	}
 ;
 }
 //-------------------------------------------//
 void Node::Add_Node ()
 {
-    printf ("# А что это?\n");
+    printf ("# ГЂ Г·ГІГ® ГЅГІГ®?\n");
     std::string answerN;
     std::getline (std::cin, answerN);
     Node* new_YES = new Node (answerN);
@@ -64,7 +60,7 @@ void Node::Add_Node ()
     NO = new_NO;
     new_NO->Parent = this;
 
-    printf ("# Чем %s отличается от %s?\n", answerN.c_str(), answerY.c_str());
+    printf ("# Г—ГҐГ¬ %s Г®ГІГ«ГЁГ·Г ГҐГІГ±Гї Г®ГІ %s?\n", answerN.c_str(), answerY.c_str());
     std::string question;
     std::getline (std::cin, question);
     text = question;
