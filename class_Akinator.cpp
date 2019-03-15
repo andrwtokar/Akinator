@@ -12,7 +12,7 @@ Akinator::~Akinator ()
 //-------------------------------------------//
 void Akinator::Registrated_User (std::string name)
 {
-    printf ("# Введите название игры (кириллицей, без заглавных): ");
+    printf ("# Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РёРіСЂС‹ (РєРёСЂРёР»Р»РёС†РµР№, Р±РµР· Р·Р°РіР»Р°РІРЅС‹С…): ");
     std::string name_2;
 	std::getline (std::cin, name_2);
 	name += "_";
@@ -24,26 +24,26 @@ void Akinator::Registrated_User (std::string name)
     {
         Play = fopen (name.c_str(), "w");
         fclose (Play);
-        std::string data_text ("живое");
+        std::string data_text ("Р¶РёРІРѕРµ");
         Node* data = new Node (data_text);
         Play_Now = new TREE(data);
 
-        std::string text_NL ("камень");
+        std::string text_NL ("РєР°РјРµРЅСЊ");
         Node* Not_Living = new Node (text_NL);
         Play_Now->root->NO = Not_Living;
         Not_Living->Parent = Play_Now->root;
 
-        std::string text_L ("человек");
+        std::string text_L ("С‡РµР»РѕРІРµРє");
         Node* Living = new Node (text_L);
         Play_Now->root->YES = Living;
         Living->Parent = Play_Now->root;
 
-        std::string text_P ("Владимир Путин");
+        std::string text_P ("Р’Р»Р°РґРёРјРёСЂ РџСѓС‚РёРЅ");
         Node* People = new Node (text_P);
         Living->YES = People;
         People->Parent = Living;
 
-        std::string text_NP ("полторашка");
+        std::string text_NP ("РїРѕР»С‚РѕСЂР°С€РєР°");
         Node* Not_People = new Node (text_NP);
         Living->NO = Not_People;
         Not_People->Parent = Living;
@@ -59,30 +59,30 @@ void Akinator::Registrated_User (std::string name)
 void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don't know how do it
 {
 
-    printf ("# Введите первый объект: ");
+    printf ("# Р’РІРµРґРёС‚Рµ РїРµСЂРІС‹Р№ РѕР±СЉРµРєС‚: ");
 	std::string a;
     fflush(stdin);
     std::getline (std::cin, a);
     int arrA[50];
 
     int hA = Play_Now->Way_To_Node (a, arrA);
-    if (hA == 0) { printf ("# Ошибка! Такого объекта не существует!\n"); return;};
+    if (hA == 0) { printf ("# РћС€РёР±РєР°! РўР°РєРѕРіРѕ РѕР±СЉРµРєС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!\n"); return;};
 
 
-    printf ("# Введите второй объект: ");
+    printf ("# Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕР№ РѕР±СЉРµРєС‚: ");
 	std::string b;
     fflush(stdin);
     std::getline (std::cin, b);
     int arrB[50];
 
     int hB = Play_Now->Way_To_Node (b, arrB);
-    if (hB == 0) { printf ("# Ошибка! Такого объекта не существует!\n"); return;};
+    if (hB == 0) { printf ("# РћС€РёР±РєР°! РўР°РєРѕРіРѕ РѕР±СЉРµРєС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!\n"); return;};
 
     int i = 0;
     Node* A = Play_Now->root;
     Node* B = Play_Now->root;
 
-    printf ("\n# И то, и другое: ");
+    printf ("\n# Р С‚Рѕ, Рё РґСЂСѓРіРѕРµ: ");
     while ((hA > 1) && (hB > 1))     // 1 or 0
     {
         hA--; hB--;
@@ -96,7 +96,7 @@ void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don
         else if ((arrA[i] == arrB[i]) && (arrA[i] == 0))
         {
 
-            printf ("не %s, ", A->text.c_str());
+            printf ("РЅРµ %s, ", A->text.c_str());
             A = A->NO;
             B = B->NO;
         }
@@ -104,11 +104,11 @@ void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don
         i++;
     };
     hA++; hB++;
-    if (i == 0) {printf ("нет сходств;\n");}
+    if (i == 0) {printf ("РЅРµС‚ СЃС…РѕРґСЃС‚РІ;\n");}
     else { printf ("\n");};
 
 
-    printf ("# НО\n");
+    printf ("# РќРћ\n");
     printf ("  @ %s: ", a.c_str());
     int j = i;
 
@@ -122,7 +122,7 @@ void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don
         }
         else if (arrA[i] == 0)
         {
-            printf ("не %s, ", A->text.c_str());
+            printf ("РЅРµ %s, ", A->text.c_str());
             A = A->NO;
         };
         i++;
@@ -140,7 +140,7 @@ void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don
         }
         else if (arrB[j] == 0)
         {
-            printf ("не %s, ", B->text.c_str());
+            printf ("РЅРµ %s, ", B->text.c_str());
             B = B->NO;
         };
         j++;
@@ -151,7 +151,7 @@ void Akinator::Object_Comporison ()                 //mnojestvennoe chislo i don
 //-------------------------------------------//
 void Akinator::Object_Definition ()
 {
-    printf ("# Введите интересующий вас объект: ");
+    printf ("# Р’РІРµРґРёС‚Рµ РёРЅС‚РµСЂРµСЃСѓСЋС‰РёР№ РІР°СЃ РѕР±СЉРµРєС‚: ");
 
 	std::string a;
     fflush(stdin);
@@ -159,7 +159,7 @@ void Akinator::Object_Definition ()
     int arr[50];
 
     int h = Play_Now->Way_To_Node (a, arr);
-    if (h == 0) { printf ("# Ошибка! Такого объекта не существует!\n"); return;};
+    if (h == 0) { printf ("# РћС€РёР±РєР°! РўР°РєРѕРіРѕ РѕР±СЉРµРєС‚Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!\n"); return;};
 
     int i = 0;
     Node* This_Node = Play_Now->root;
@@ -169,12 +169,12 @@ void Akinator::Object_Definition ()
         h--;
         if (arr[i] == 1)
         {
-            printf ("Это %s, ", This_Node->text.c_str());
+            printf ("Р­С‚Рѕ %s, ", This_Node->text.c_str());
             This_Node = This_Node->YES;
         }
         else
         {
-            printf ("Это не %s,", This_Node->text.c_str());
+            printf ("Р­С‚Рѕ РЅРµ %s,", This_Node->text.c_str());
             This_Node = This_Node->NO;
         };
         i++;
@@ -199,7 +199,7 @@ void Akinator::Read_Tree (std::string name)
 //-------------------------------------------//
 void Akinator::Save_Tree (std::string name)
 {
-    printf ("# Введите название игры (кириллицей, без заглавных): ");
+    printf ("# Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ СЃРѕС…СЂР°РЅСЏРµРјРѕР№ РёРіСЂС‹ (РєРёСЂРёР»Р»РёС†РµР№, Р±РµР· Р·Р°РіР»Р°РІРЅС‹С…): ");
     std::string name_2;
     fflush (stdin);
 	std::getline (std::cin, name_2);
