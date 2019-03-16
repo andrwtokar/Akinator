@@ -186,7 +186,7 @@ void Akinator::Object_Definition ()
 void Akinator::Read_Tree (std::string name)
 {
 
-    FILE* Play = fopen (name.c_str(), "r");
+    FILE* Play = fopen (name.c_str(), "rb");
     size_t str_size = 0;
 
     std::string data_text = " ";
