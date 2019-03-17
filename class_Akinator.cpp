@@ -19,7 +19,7 @@ void Akinator::Registrated_User (std::string name)
 	name += name_2;
 	name += ".txt";
 
-	FILE* Play = fopen (name.c_str(), "r");
+	FILE* Play = fopen (name.c_str(), "rb");
     if (Play == NULL)
     {
         Play = fopen (name.c_str(), "w");
