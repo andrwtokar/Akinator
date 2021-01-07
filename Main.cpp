@@ -1,15 +1,17 @@
 #include "akinator_list.h"
 
-int main ()
+int main()
 {
-    SetConsoleCP(1251);               //узнать что это значит
+    SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    setlocale (LC_ALL, "russian");
-	printf ("# Akinator.\n"
-	"# Tokar. 2018.\n\n");
+    setlocale(LC_ALL, "russian");
+    printf("# Akinator.\n"
+           "# Tokar. 2018.\n\n");
 
-    Interface ();
+    printf("РњРµРЅСЏ Р·РѕРІСѓС‚ РђРЅРґСЂРµР№!\n\n");
 
-    printf ("# Спасибо за использование этой программы)\n");
+    Interface();
+
+    printf("# РЎРїР°СЃРёР±Рѕ Р·Р° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЌС‚РѕР№ РїСЂРѕРіСЂР°РјРјС‹)\n");
     return 0;
 };
