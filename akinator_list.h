@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>            //16-Р±РёС‚РѕРІС‹Р№ СЂРµРґР°РєС‚РѕСЂ hexworkshop
+#include <locale.h>            //16-ричный редактор hexworkshop
 #include <string>
 #include <iostream>
 #include <windows.h>

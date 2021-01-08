@@ -4,14 +4,14 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    setlocale(LC_ALL, "russian");
+    setlocale(LC_ALL, "Rus");
     printf("# Akinator.\n"
            "# Tokar. 2018.\n\n");
 
-    printf("РњРµРЅСЏ Р·РѕРІСѓС‚ РђРЅРґСЂРµР№!\n\n");
+    printf("Меня зовут Андрей!\nНадо не забыть удалить это!!!\n");
 
     Interface();
 
-    printf("# РЎРїР°СЃРёР±Рѕ Р·Р° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ СЌС‚РѕР№ РїСЂРѕРіСЂР°РјРјС‹)\n");
+    printf("# Спасибо за использование этой программы)\n");
     return 0;
 };
